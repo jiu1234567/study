@@ -1,0 +1,38 @@
+# ===== 微信腾讯文档 · 自动嗅探 + 自动填表配置 =====
+# 改完保存，双击 watch.bat 开跑。Ctrl+C 退出。
+
+# 【必填】按表单里填空框的顺序，一行一个
+text=2
+text=1
+
+# 【选填】单选题 / 多选题：写选项完整文字，一行一个
+# radio=一
+# check=六
+
+# 【选填】浏览器与登录态目录（第一次运行要扫码，profile 目录留着就永久免扫）
+browser=chrome
+profile=profile
+
+# 【选填】OCR 轮询间隔（毫秒），越小越灵敏但越吃 CPU
+poll_ms=500
+
+# 【选填】识别关键词：OCR 在这些字附近才去点卡片
+keywords=腾讯文档,收集表,docs.qq,form/page,问卷,登记表,报名表
+
+# 【必填-新模式】自动点开卡片：检测到文档消息/卡片就点它一下，
+# 让文档进入「最近文档」，由 watch_docs.py 接手自动填写提交。
+auto_open=1
+
+# 【选填】watch_docs 里并行跑卡片点击器（1=开）。开这个的话单开 watch_docs.bat 一个窗口就够
+card_clicker=1
+
+# 【选填】watch_docs 的列表刷新间隔（秒），2 = 每 2 秒重进一次「最近文档」
+refresh_s=2
+
+# 【选填】到链接后等表单放开的最长时间（秒）
+open_timeout=120
+reload_interval=0.5
+
+# 【选填】调试开关：1=只嗅探链接不填（先这样跑一次看能不能抓到）
+detect_only=0
+# dry_run=0
